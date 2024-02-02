@@ -41,7 +41,8 @@ function ImageBox() {
                     <ImageReferenceIDs catData={catData} />
 
                     <button onClick={fetchNewCat}
-                        className="absolute -bottom-20 mt-8 sm:mt-4 text-white font-bold bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded">
+                        className="flex items-center absolute -bottom-20 mt-8 sm:mt-4 text-white font-bold bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded">
+                        <i className="las la-magic text-2xl mr-2"></i>
                         Fetch Another Cat
                     </button>
 

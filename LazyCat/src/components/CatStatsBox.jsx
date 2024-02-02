@@ -1,5 +1,5 @@
 
-function CatExtraDetailsBox({ catData }) {
+function CatStatsBox({ catData }) {
 
     const statsArray = [
         { statsTitle: "Indoor", statsRef: "indoor" },
@@ -37,7 +37,7 @@ function CatExtraDetailsBox({ catData }) {
         return statsArray.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
                 <p>{stat.statsTitle}:</p>
-                <p className="text-xl">{(catData.breeds[0]?.stat?.[stat.statsRef] || '?')}/5</p>
+                <p className="text-xl">{catData.breeds[0]?.[stat.statsRef] !== null && catData.breeds[0]?.[stat.statsRef] !== undefined ? catData.breeds[0]?.[stat.statsRef] : '0'}/5</p>
             </div>
         ));
     };
@@ -58,4 +58,4 @@ function CatExtraDetailsBox({ catData }) {
     );
 }
 
-export default CatExtraDetailsBox;
+export default CatStatsBox;
