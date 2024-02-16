@@ -4,7 +4,7 @@ function ImageReferenceIDs({catData}) {
         <>
             {catData && (
                 <>
-                    <div className="w-full custom-md:w-[700px] absolute -bottom-6 flex justify-between">
+                    <div className="w-full custom-md:w-[700px] flex justify-between">
                         <span>
                             Image ID:&nbsp;
                             {catData.id}

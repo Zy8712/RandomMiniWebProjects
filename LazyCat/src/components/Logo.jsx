@@ -15,7 +15,12 @@ function Logo() {
                 </div>
                 <div className="inline">
                     <h1 className="text-7xl custom-sm:text-8xl font-semibold">Lazy Cat</h1>
-                    <span className="text-base custom-sm:text-2xl">Single click, cat pics. Powered by TheCatAPI.</span>
+                    <span className="text-base custom-sm:text-2xl">
+                        Single click, cat pics. Powered by&nbsp;
+                        <a href="https://thecatapi.com/" className="underline underline-offset-4">
+                            TheCatAPI
+                        </a>.
+                    </span>
                 </div>
             </div >
         </>

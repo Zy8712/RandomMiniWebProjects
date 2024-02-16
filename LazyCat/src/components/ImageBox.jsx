@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CatImage from './CatImage';
-import ImageReferenceIDs from './ImageReferenceIDs';
-import CatDetailsBox from './CatDetailsBox';
-import CatMoreBox from './CatMoreBox';
+import CatImage from './center-box-components/CatImage';
+import ImageReferenceIDs from './center-box-components/ImageReferenceIDs';
+import CatDetailsBox from './left-box-components/CatDetailsBox';
+import CatMoreBox from './right-box-components/CatMoreBox';
+import FetchCatsButton from './center-box-components/FetchCatsButton';
 
 function ImageBox() {
     const [catData, setCatData] = useState(null);
@@ -30,27 +31,23 @@ function ImageBox() {
     return (
         <>
             <div className="w-full custom-md:w-[700px] xl:w-[1320px] flex flex-col xl:flex-row items-center xl:items-start justify-between mt-8">
+                
                 <div className="hidden xl:flex">
                     <CatDetailsBox catData={catData} />
                 </div>
 
-                <div className="w-[92%] custom-md:w-[700px] h-[500px] flex flex-col justify-center items-center relative border-2 border-black border-solid rounded-2xl">
-
+                <div className="w-[92%] custom-md:w-[700px] flex flex-col items-center relative">
                     <CatImage catData={catData} />
 
                     <ImageReferenceIDs catData={catData} />
 
-                    <button onClick={fetchNewCat}
-                        className="flex items-center absolute -bottom-20 mt-8 sm:mt-4 text-white font-bold bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded">
-                        <i className="las la-magic text-2xl mr-2"></i>
-                        Fetch Another Cat
-                    </button>
-
+                    <FetchCatsButton fetchNewCat={fetchNewCat} />
                 </div>
 
                 <div className="hidden xl:flex">
                     <CatMoreBox catData={catData} />
                 </div>
+
 
                 <div className="w-[92%] custom-md:w-[700px] min-h-[600px] relative flex xl:hidden flex-col sm:flex-row justify-between items-center sm:items-start mt-24 mb-20">
                     <CatDetailsBox catData={catData} />
@@ -63,3 +60,4 @@ function ImageBox() {
 }
 
 export default ImageBox;
+// attempt to appply flex row order as opposed to flex col for mobile 
