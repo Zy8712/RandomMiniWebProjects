@@ -1,17 +1,26 @@
-import './App.css';
+import { Router, Route } from 'wouter';
+
+import NavBar from './components/NavBar';
+
+import Download from './pages/DownloadPage';
+import Instructions from './pages/InstructionsPage';
+import Faq from './pages/FaqPage';
+
 import Footer from './components/Footer';
-import Header from './components/Header';
-import PageLayout from './layouts/PageLayout';
+
+import './App.css';
 
 export default function App() {
 
   return (
     <>
-      <PageLayout>
-        <Header />
-
+      <Router>
+        <NavBar />
+        <Route path="/" component={Download} />
+        <Route path="/instructions" component={Instructions} />
+        <Route path="/faq" component={Faq} />
         <Footer />
-      </PageLayout>
+      </Router>
     </>
   )
 }

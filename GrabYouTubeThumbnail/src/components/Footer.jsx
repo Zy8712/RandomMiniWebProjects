@@ -1,8 +1,8 @@
 
-export default function Footer() {
-    return (
+export default function Footer(){
+    return(
         <>
-            <footer className="w-full text-center text-xs font-semibold absolute bottom-1">
+             <footer className="w-full text-center text-xs font-semibold">
                 <p>
                     Site Designed & Developed by:&nbsp;
                     <a href="https://github.com/Zy8712" target="_blank"
