@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-
 import PageLayout from "../layouts/PageLayout";
-
 import SearchBar from "../components/download-page-components/SearchBar";
 import ImageBox from "../components/download-page-components/ImageBox";
+import GenerateButton from "../components/download-page-components/GenerateButton"
+import DownloadOptions from '../components/download-page-components/DownloadOptions';
 
 export default function DownloadPage() {
 
@@ -37,24 +37,11 @@ export default function DownloadPage() {
         <>
             <PageLayout>
                 <div className="w-full h-full flex flex-col items-center">
-
-                    <SearchBar />
-
-                    <input
-                        type="text"
-                        placeholder="Enter YouTube URL"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                    />
+                    <SearchBar url={url} setUrl={setUrl} />
+                    <GenerateButton generateThumbnails={generateThumbnails} />
+                    <ImageBox thumbnails={thumbnails} />
                     
-                    <button onClick={generateThumbnails}>Generate Thumbnails</button>
-
-                    <ImageBox />
-
-                    <SearchBar />
-
-                    <SearchBar />
-
+                    <DownloadOptions />
 
                 </div>
             </PageLayout>
