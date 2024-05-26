@@ -1,7 +1,7 @@
 export default function SearchBar({ url, setUrl }) {
     return (
         <>
-            <div className="my-10 w-[960px] h-20 flex items-center border-gray-500 border-4 border-solid bg-white rounded-xl overflow-hidden">
+            <div className="my-10 w-[960px] h-20 flex items-center border-blue-400 border-4 border-solid bg-white rounded-xl overflow-hidden">
                 <input
                     type="text"
                     placeholder="Enter YouTube URL"
